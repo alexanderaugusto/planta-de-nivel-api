@@ -302,6 +302,8 @@ class FechadaComGanhoIntegral(Malha):
             'erro': self.erroRegimePermanente,
             'kiRecomendado': self.ki,
             'kpRecomendado': self.kp,
+            'a1': const.COEFICIENTE_A1,
+            'b1': const.COEFICIENTE_B1
         }
 
         return malha

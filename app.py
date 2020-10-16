@@ -9,7 +9,14 @@ CORS(app)
 
 @app.route("/", methods=['POST'])
 def home():
-    
+    # Instanciando classes
+    malhaOriginal = malha.Original() # Malha Original
+    malhaOriginalEmRespostaEntrada = malha.OriginalEmRespostaEntrada() # Malha minimos quadrados 
+    malhaAberta = malha.Aberta() # Malha Aberta
+    malhaFechada = malha.Fechada()  # Malha Fechada 
+    FechadaComGanho = malha.FechadaComGanho()  # Malha Fechada com ganho
+    FechadaComGanhoIntegral = malha.FechadaComGanhoIntegral()  # Malha Fechada com ganho proporcional e integral
+
     try:
         data = request.get_json() # Pegando os dados da Requisição 
     except:
@@ -51,13 +58,4 @@ def home():
     return jsonify(malhas)
 
 if __name__ == '__main__':
-
-    # Instanciando classes
-    malhaOriginal = malha.Original() # Malha Original
-    malhaOriginalEmRespostaEntrada = malha.OriginalEmRespostaEntrada() # Malha minimos quadrados 
-    malhaAberta = malha.Aberta() # Malha Aberta
-    malhaFechada = malha.Fechada()  # Malha Fechada 
-    FechadaComGanho = malha.FechadaComGanho()  # Malha Fechada com ganho
-    FechadaComGanhoIntegral = malha.FechadaComGanhoIntegral()  # Malha Fechada com ganho proporcional e integral
-
     app.run(debug=True)
