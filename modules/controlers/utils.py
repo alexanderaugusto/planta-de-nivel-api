@@ -131,7 +131,7 @@ def KpKi(sys):
 
 	# Pegando o valor de estado estacionário  
 	valorEstacionario = info['SteadyStateValue']*const.SP
-	
+
 	# Calculando valor de K e tall
 	k = K(const.SP, valorEstacionario)
 	tal = tall(yout, valorEstacionario, const.TEMPO_AMOSTRAGEM)
